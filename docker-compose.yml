@@ -36,7 +36,7 @@ services:
     container_name: github_runner
     environment:
       REPO_URL: https://github.com/BaptisteLegat/web-php-bdd
-      RUNNER_TOKEN: AS6ZEVT3YQPUJQSVZX23UXDGOAP44
+      RUNNER_TOKEN: AS6ZEVU54DKBWKYLH7JFIDDGOAUIG
       RUNNER_NAME: Ordinateur-portable-de-Baptiste
       RUNNER_WORKDIR: /tmp/github-runner
       RUNNER_GROUP: default
