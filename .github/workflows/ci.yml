@@ -16,6 +16,12 @@ jobs:
       - name: Start Docker containers
         run: docker-compose -f docker-compose.yml up -d
 
+      - name: Install pdo_mysql
+        run: docker exec php docker-php-ext-install pdo_mysql
+      
+      - name: Restart PHP container
+        run: docker restart php
+
       - name: Wait for services to start
         run: sleep 15
       
