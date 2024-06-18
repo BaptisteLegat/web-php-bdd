@@ -29,6 +29,3 @@ services:
       MYSQL_PASSWORD: password
     volumes:
       - ./initDB.sql:/docker-entrypoint-initdb.d/initDB.sql
-
-networks:
-  github-runner:
