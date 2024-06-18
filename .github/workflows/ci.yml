@@ -13,9 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       
-      - name: Install pdo_mysql
-        run: docker-compose exec web apk add --no-cache php7-pdo_mysql
-
       - name: Start Docker containers
         run: docker-compose -f docker-compose.yml up -d
 
