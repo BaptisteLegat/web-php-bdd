@@ -16,11 +16,8 @@ jobs:
       - name: Start Docker containers
         run: docker-compose -f docker-compose.yml up -d
       
-      - name: Wait for services to be ready
-        run: sleep 30
-      
       - name: Curl the content of page to check if it is working
         run: docker exec php curl -s http://localhost:8080
       
-      - name: Stop Docker containers
-        run: docker-compose -f docker-compose.yml down
+      # - name: Stop Docker containers
+        # run: docker-compose -f docker-compose.yml down
