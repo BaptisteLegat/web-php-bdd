@@ -17,7 +17,7 @@ jobs:
         run: docker-compose -f docker-compose.yml up -d
 
       - name: Curl the content of page to check if it is working
-        run: docker exec web curl -s http://localhost:8080
+        run: docker exec php curl -s http://localhost:8080
       
       - name: Stop Docker container
         run: docker-compose -f docker-compose.yml down
