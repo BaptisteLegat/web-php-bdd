@@ -12,3 +12,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      
+      - name: Run Docker container
+        run: docker-compose -f WEB-PHP-BDD/docker-compose.yml up -d
+
+      - name: Curl the content of page to check if it is working
+        run: curl http://localhost:8080
+      
+      - name: Stop Docker container
+        run: docker-compose -f WEB-PHP-BDD/docker-compose.yml down

@@ -1,2 +1,0 @@
-*.tar.gz filter=lfs diff=lfs merge=lfs -text
-actions-runner/actions-runner-osx-x64-2.317.0.tar.gz filter=lfs diff=lfs merge=lfs -text

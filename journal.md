@@ -37,3 +37,26 @@ services:
         volumes:
             - ./mysql/initDB.sql:/docker-entrypoint-initdb.d/initDB.sql  # Mounts the local ./mysql/initDB.sql file to the /docker-entrypoint-initdb.d/initDB.sql file inside the container
 ```
+
+Pour faire fonctionner la db, il faut : 
+
+- Accédez à votre conteneur PHP :
+
+Utilisez la commande docker-compose exec pour accéder à une session shell interactive dans votre conteneur PHP :
+
+    docker-compose exec web bash
+
+- Installer pdo_mysql :
+
+À l'intérieur du conteneur PHP, installez l'extension pdo_mysql :
+
+    docker-php-ext-install pdo_mysql
+
+Assurez-vous de suivre les instructions interactives pour terminer l'installation de l'extension.
+
+- Redémarrez le conteneur PHP :
+
+Après avoir installé pdo_mysql, redémarrez le conteneur PHP pour appliquer les modifications :
+
+    exit  # Quitter le shell du conteneur PHP
+    docker-compose restart web
