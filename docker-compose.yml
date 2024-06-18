@@ -12,10 +12,11 @@ services:
   nginx:
     image: arm64v8/nginx:latest
     container_name: nginx
-    volumes:
-      - ./nginx/default.conf:/nginx/conf.d/default.conf
     ports:
       - "8080:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./php:/var/www/html
     depends_on:
       - web
 
