@@ -21,6 +21,9 @@ jobs:
       
       - name: Restart PHP container
         run: docker restart php
+
+      - name: Wait for services to start
+        run: sleep 5
       
       - name: Curl the content of page to check if it is working
         run: docker exec nginx curl -s localhost:80
